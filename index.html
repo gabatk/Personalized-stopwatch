@@ -4,16 +4,49 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Personalized timer</title>
+		<title>Personalized stopwatch</title>
+		<link rel="stylesheet" href="./css/style.css" />
 		<script
 			src="https://kit.fontawesome.com/e3bd443a68.js"
 			crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
+		<div class="wrapper">
+			<p class="info">
+				<i class="fas fa-question"></i>
+			</p>
 
+			<h1>Stopwatch</h1>
+			<p class="stopwatch">0:00</p>
+			<p class="time">0:00</p>
 
-        
+			<div class="buttons">
+				<button class="start"><i class="fas fa-play"></i></button>
+				<button class="pause"><i class="fas fa-pause"></i></button>
+				<button class="stop"><i class="fas fa-stop"></i></button>
+				<button class="reset"><i class="fas fa-times"></i></button>
+				<button class="history">archive</button>
+			</div>
+
+			<ul class="timelist"></ul>
+		</div>
+
+		<div class="modal-shadow">
+			<div class="modal">
+				<h3>Instruction:</h3>
+				<p><i class="fas fa-play"></i> - start</p>
+				<p><i class="fas fa-pause"></i> - pause</p>
+				<p><i class="fas fa-stop"></i> - stop</p>
+				<p>
+					<i class="fas fa-times"></i> - delete everything (including the
+					archive)
+				</p>
+				<p><strong>archive</strong> - view previous measurements</p>
+
+				<button class="close">Close</button>
+			</div>
+		</div>
+
 		<script src="./js/main.js"></script>
 	</body>
 </html>
