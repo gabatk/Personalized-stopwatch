@@ -6,6 +6,12 @@
     margin: 0;
 }
 
+:root {
+    --first-color: #e48241;
+    --second-color: #D2C7BE;
+
+}
+
 html {
     font-size: 62.5%;
 }
@@ -17,4 +23,82 @@ body {
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
     background-color: #333;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    width: 800px;
+    font-size: 1.6rem;
+    background-image: radial-gradient(circle, rgb(43, 44, 46)0%, rgb(25, 25, 25) 93%);
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px black;
+    color: #fff;
+}
+
+.info {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    padding: 20px;
+    font-size: 2.4rem;
+    color: var(--second-color);
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.info:hover {
+    color: var(--first-color);
+}
+
+.project-title {
+    margin-bottom: 20px;
+    font-size: 6rem;
+    font-weight: lighter;
+}
+
+.stopwatch {
+    font-size: 7.2rem;
+    color: var(--first-color);
+}
+
+.time {
+    visibility: hidden;
+    color: var(--second-color);
+    font-size: 2.2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.stopwatch-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    width: 20%;
+    color: #fff;
+    font-size: 2.2rem;
+    background-color: transparent;
+    border: 1px solid var(--first-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.archive {
+    flex-grow: 1;
+    text-transform: uppercase;
+}
+
+.stopwatch-btn:hover,
+.stopwatch-btn:focus {
+    background-color: var(--first-color);
+    outline: none;
 }
