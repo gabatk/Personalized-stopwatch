@@ -6,9 +6,17 @@ const stopBtn = document.querySelector('.stop');
 const resetBtn = document.querySelector('.reset');
 const archiveBtn = document.querySelector('.archive');
 const timeList = document.querySelector('.time-list');
-const infoBtn = document.querySelector('.info');
+
+const infoBtn = document.querySelector('.fa-question');
 const modalShadow = document.querySelector('.modal-shadow');
 const closeModalBtn = document.querySelector('.close');
+
+const colorBtn = document.querySelector('.fa-paintbrush');
+const colorPanel = document.querySelector('.colors');
+const colorOne = document.querySelector('.one');
+const colorTwo = document.querySelector('.two');
+const colorThree = document.querySelector('.three');
+let root = document.documentElement;
 
 let countTime;
 let minutes = 0;
@@ -85,8 +93,6 @@ const showModal = () => {
 	modalShadow.classList.toggle('modal-animation');
 };
 
-const closeModal = () => {};
-
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
 stopBtn.addEventListener('click', handleStop);
@@ -97,3 +103,23 @@ closeModalBtn.addEventListener('click', showModal);
 window.addEventListener('click', e =>
 	e.target === modalShadow ? showModal() : false
 );
+
+colorBtn.addEventListener('click', () => {
+	colorPanel.classList.toggle('show-colors');
+});
+
+// Updating a CSS Variable with JavaScript:
+colorOne.addEventListener('click', () => {
+	root.style.setProperty('--first-color', 'rgb(220, 156, 45)');
+	root.style.setProperty('--hover-color', 'rgb(236, 128, 55)');
+});
+
+colorTwo.addEventListener('click', () => {
+	root.style.setProperty('--first-color', 'rgb(6, 173, 250)');
+	root.style.setProperty('--hover-color', 'rgb(28, 145, 199)');
+});
+
+colorThree.addEventListener('click', () => {
+	root.style.setProperty('--first-color', 'rgb(0, 255, 42)');
+	root.style.setProperty('--hover-color', 'rgb(28, 209, 58)');
+});

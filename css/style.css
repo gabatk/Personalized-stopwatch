@@ -194,7 +194,7 @@ body {
     align-items: center;
     position: absolute;
     top: 80px;
-    right: 50px;
+    right: -100px;
     width: 70px;
     height: 220px;
     transition: transform .3s;
