@@ -4,6 +4,7 @@ const startBtn = document.querySelector('.start');
 const pauseBtn = document.querySelector('.pause');
 const stopBtn = document.querySelector('.stop');
 const resetBtn = document.querySelector('.reset');
+const archivetBtn = document.querySelector('.archivet');
 const timeList = document.querySelector('.time-list');
 const infoBtn = document.querySelector('.info');
 const modalShadow = document.querySelector('.modal-shadow');
@@ -63,7 +64,20 @@ const clearStuff = () => {
 	minutes = 0;
 };
 
+const showArchive = () => {
+	timeList.textContent = '';
+	let num = 1;
+
+	timesArr.forEach(time => {
+		const newTime = document.createElement('li');
+		newTime.innerHTML = `Result no. ${num}: <span>${time}</span>`;
+		timeList.appendChild(newTime);
+		num++;
+	});
+};
+
 startBtn.addEventListener('click', handleStart);
 pauseBtn.addEventListener('click', handlePause);
 stopBtn.addEventListener('click', handleStop);
 resetBtn.addEventListener('click', handleReset);
+archiveBtn.addEventListener('click', showArchive);
