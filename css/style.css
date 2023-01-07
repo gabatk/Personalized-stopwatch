@@ -7,8 +7,9 @@
 }
 
 :root {
-    --first-color: #e48241;
-    --second-color: #D2C7BE;
+    --first-color: rgb(236, 128, 55);
+    --second-color: rgb(210, 199, 190);
+    --hover-color: rgb(223, 104, 24);
 
 }
 
@@ -38,12 +39,12 @@ body {
     border-radius: 8px;
     box-shadow: 5px 5px 10px black;
     color: #fff;
+    overflow: hidden;
 }
 
-.info {
+.info-icon {
     position: absolute;
     top: 6px;
-    right: 14px;
     padding: 20px;
     font-size: 2.4rem;
     color: var(--second-color);
@@ -51,8 +52,16 @@ body {
     transition: color .3s;
 }
 
-.info:hover {
-    color: var(--first-color);
+.fa-question {
+    right: 14px;
+}
+
+.fa-paintbrush {
+    right: 60px;
+}
+
+.info-icon:hover {
+    color: var(--hover-color);
 }
 
 .project-title {
@@ -99,7 +108,7 @@ body {
 
 .stopwatch-btn:hover,
 .stopwatch-btn:focus {
-    background-color: var(--first-color);
+    background-color: var(--hover-color);
     outline: none;
 }
 
@@ -132,12 +141,13 @@ body {
     height: 360px;
     padding: 30px 60px;
     border-radius: 15px;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(32, 32, 32);
+    color: #fff
 }
 
 .modal-title {
-    font-size: 3rem;
     margin-bottom: 20px;
+    font-size: 3rem;
 }
 
 .modal-item {
@@ -146,16 +156,21 @@ body {
     font-size: 2rem;
 }
 
+.modal-icon,
+.modal-element {
+    color: var(--first-color);
+}
+
 .close {
     display: block;
     margin: 40px auto 0;
     width: 200px;
-    background-color: var(--first-color);
+    background-color: #333;
     transition: background-color .3s;
 }
 
 .close:hover {
-    background-color: #df6818;
+    background-color: #111;
 }
 
 .modal-animation {
@@ -170,4 +185,60 @@ body {
     to {
         opacity: 1;
     }
+}
+
+.colors {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    width: 70px;
+    height: 220px;
+    transition: transform .3s;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color .5s, box-shadow .5s;
+}
+
+.show-colors {
+    transform: translateX(-110px);
+}
+
+.one {
+    background-color: rgb(220, 156, 45);
+    box-shadow: 0 0 8px rgb(236, 128, 55);
+}
+
+.two {
+    background-color: rgb(6, 173, 250);
+    box-shadow: 0 0 8px rgb(6, 173, 250);
+}
+
+.three {
+    background-color: rgb(0, 255, 42);
+    box-shadow: 0 0 8px rgb(0, 255, 42);
+}
+
+.one:hover {
+    background-color: rgb(223, 104, 24);
+    box-shadow: 0 0 16px rgb(223, 104, 24);
+}
+
+.two:hover {
+    background-color: rgb(28, 145, 199);
+    box-shadow: 0 0 16px rgb(6, 173, 250);
+}
+
+.three:hover {
+    background-color: rgb(28, 209, 58);
+    box-shadow: 0 0 16px rgb(0, 255, 42);
 }
