@@ -32,7 +32,7 @@ const handleStart = () => {
 			seconds++;
 			stopwatch.textContent = `${minutes}:00`;
 		}
-	}, 100);
+	}, 1000);
 };
 
 const handlePause = () => {
